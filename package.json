@@ -1,0 +1,14 @@
+{
+  "name": "shree-krishna-rudraksh-point",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shree Krishna Rudraksh Point - full-stack e-commerce website",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n server,client -c yellow,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "seed": "npm run seed --prefix server",
+    "seed:destroy": "npm run seed:destroy --prefix server",
+    "build": "npm run build --prefix client"
+  },
+  "devDependencies": { "concurrently": "^8.2.2" }
+}

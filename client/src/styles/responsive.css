@@ -1,0 +1,4 @@
+/* Small overrides that are easier in plain CSS than in Tailwind classes. */
+@media (max-width: 640px) {
+  .hide-on-mobile { display: none; }
+}

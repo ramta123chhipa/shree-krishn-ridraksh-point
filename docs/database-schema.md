@@ -1,0 +1,16 @@
+# Collections so far
+- **Category**: name, slug, parent, isActive, sortOrder
+- **Product**: name, slug, sku, category, images, price, discountPrice, stock, weight, variants, specifications, authenticity, isFeatured, isBestSeller, ratings, soldCount
+- **Subscriber**: email (unique)
+- **ContactMessage**: name, email, phone, message
+- **User**: name, email (unique), phone, password (bcrypt hash, never returned), role (customer/admin), isActive, isEmailVerified, hashed one-time tokens, passwordChangedAt
+- **Address**: user, label, fullName, phone, line1, line2, city, state, pincode, country, isDefault
+- **Cart**: user (unique), items [product, variantId?, quantity] (prices are NOT stored)
+- **Wishlist**: user (unique), products[]
+- **Order**: orderNumber, user, items[] (snapshot: product, name, sku, image, variant, unitPrice, quantity, lineTotal), shippingAddress (snapshot), pricing {subtotal, discount, shippingCharge, total}, coupon {code}, paymentMethod, paymentStatus, status, statusHistory[], razorpayOrderId, refundRequired, refundLock, deliveredAt, shipment {courier, trackingId}, returnRequest {reason, status, requestedAt, resolvedAt}
+- **Payment**: order, user, razorpayOrderId, razorpayPaymentId (unique), amount, status (created/captured/failed), refunds[] (filled when the admin sends a refund)
+- **Coupon**: code, discountType, discountValue, maxDiscount, minOrderValue, startsAt, expiresAt, usageLimit, usedCount, perUserLimit, isActive
+- **Setting**: one document; `codEnabled` (switched from the admin dashboard)
+- **WebhookEvent**: eventId (unique), auto-deleted after 30 days
+- **Banner**: title, subtitle, image {url, publicId}, link (a page on this site), isActive, sortOrder
+- **Product images**: `images[] { url, publicId }` live in Cloudinary; the first one is the main photo
