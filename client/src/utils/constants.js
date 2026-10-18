@@ -19,9 +19,9 @@ export const FEATURED_CATEGORIES = [
 ];
 
 export const CONTACT = {
-  email: 'info@example.com',
-  phone: '+91 00000 00000',
-  address: 'Add your shop address here',
+  email: 'rajuchhipa7425@gmail.com',
+  phone: '+91 9829146757',
+  address: 'shree krishna rudraksh point,sadar bazar ramsar,nasirabad,ajmer',
 };
 
 export const FAQS = [
