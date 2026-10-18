@@ -21,7 +21,7 @@ export default function Home() {
       <OffersSection />
       <FeaturedProducts title="New arrivals" params={{ sort: 'newest' }} viewAllTo="/shop?sort=newest" />
       <WhyChooseUs />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <FaqSection />
       <Newsletter />
     </>
